@@ -32,13 +32,15 @@ function BattleScene({ windowState }) {
   const [ruleState, showrule] = useState(false);
   const [battleEnd, showAfterBattle] = useState(false);
 
+  const style = { "font-weight": "900" };
+
   const dispatch = useDispatch();
 
   const monsterName = {
     crab: "變異的鋸緣鏽斑蟹 x2",
     crabAngry: "怨懟的 變異的鋸緣鏽斑蟹 x2",
     shrimp: "變異的刺脊岩龍蝦 x4",
-    shrimpAngry: "怨懟的 變異的刺脊岩龍蝦 x4",
+    shrimpAngry: "怨懟的 變異的刺脊岩龍蝦 x3",
     nameless: "被吞噬的無名者",
   };
   const monsterType = {
@@ -58,9 +60,9 @@ function BattleScene({ windowState }) {
   const monsterState = {
     crab: { hp: "200 / 1名", speed: "(DICE20)" },
     crabAngry: { hp: "250 / 1名", speed: "(DICE20)+5" },
-    shrimp: { hp: "200 / 1名", speed: "(DICE20)" },
-    shrimpAngry: { hp: "250 / 1名", speed: "(DICE20)+5" },
-    nameless: { hp: "350", speed: "(DICE20)/(DICE20)+10" },
+    shrimp: { hp: "200 / 1名", speed: "(DICE12)" },
+    shrimpAngry: { hp: "250 / 1名", speed: "(DICE12)+5" },
+    nameless: { hp: "550", speed: "(DICE20)" },
   };
   const battleText = {
     crab: (
@@ -128,11 +130,13 @@ function BattleScene({ windowState }) {
         <br />
         【敵方戰鬥回合】攻擊(COIN)
         <br />I →<br />
-        ［真是蟹了］(DICE50-100)
+        ［真是蟹了］(DICE25-50)
         <br />
         <br />P / 特殊骰 →<br />
-        ［鰲甲衝擊］(DICE50-100)+10，被擊中的船隻於 下回合開始 持續 3
+        ［鰲甲衝擊］(DICE25-50)+10，被擊中的船隻於 下回合開始 持續 3
         回合[負面效果-破損]，每次－10點耐久。
+        <br />
+        [負面效果-破損] 僅有造成的傷害會被疊加，回合數不變。
       </p>
     ),
     crabAngry: (
@@ -144,10 +148,12 @@ function BattleScene({ windowState }) {
         <br />
         【敵方戰鬥回合】攻擊(COIN)
         <br />I →<br />
-        ［真是蟹了］(DICE80-100) <br />
+        ［真是蟹了］(DICE40-50) <br />
         <br />P / 特殊骰 →<br />
-        ［鰲甲衝擊］(DICE80-100)+20，被擊中的船隻於 下回合開始 持續 3
+        ［鰲甲衝擊］(DICE40-50)+20，被擊中的船隻於 下回合開始 持續 3
         回合[負面效果-破損]，每次－10點耐久。
+        <br />
+        [負面效果-破損] 僅有造成的傷害會被疊加，回合數不變。
       </p>
     ),
     shrimp: (
@@ -158,11 +164,13 @@ function BattleScene({ windowState }) {
         <br />
         【敵方戰鬥回合】攻擊(COIN)
         <br /> I → <br />
-        ［蝦次一定］(DICE50-100)
+        ［蝦次一定］(DICE10-40)
         <br />
         <br /> P / 特殊骰 → <br />
-        ［鰲甲衝擊］(DICE50-100)+10，被擊中的船隻於 下回合開始 持續 3
+        ［鰲甲衝擊］(DICE10-40)+10，被擊中的船隻於 下回合開始 持續 3
         回合[負面效果-破損]，每次－10點耐久。
+        <br />
+        [負面效果-破損] 僅有造成的傷害會被疊加，回合數不變。
       </p>
     ),
     shrimpAngry: (
@@ -174,11 +182,13 @@ function BattleScene({ windowState }) {
         <br />
         【敵方戰鬥回合】攻擊(COIN)
         <br /> I → <br />
-        ［蝦次一定］(DICE80-100)
+        ［蝦次一定］(DICE10-40)
         <br />
         <br /> P / 特殊骰 → <br />
-        ［鰲甲衝擊］(DICE80-100)+20，被擊中的船隻於 下回合開始 持續 3
+        ［鰲甲衝擊］(DICE10-40)+20，被擊中的船隻於 下回合開始 持續 3
         回合[負面效果-破損]，每次－10點耐久。
+        <br />
+        [負面效果-破損] 僅有造成的傷害會被疊加，回合數不變。
       </p>
     ),
     nameless: (
@@ -186,20 +196,23 @@ function BattleScene({ windowState }) {
         雙方採用船戰規則。攻擊敵方時可以黑鋼砲攻擊當作弱點打擊，共 5
         次可將目標擊退。
         <br /> ※ 因強烈的憤恨，第一次血量歸零時將會留有 1 點血量。
+        <br /> ※ 血量低於50（含）時，速度變更為 (DICE20)+10
         <br />
-        <br />
-        【敵方戰鬥回合】
-        <br /> 奇數回：攻擊(COIN) <br />I → <br />
-        ［穿刺晶體］(DICE80-120) <br />
-        <br />P / 特殊骰 →<br />
-        ［遍布藍霧］(DICE100-120)+20，被擊中的船隻於 下回合開始 持續 3
+        【敵方戰鬥回合】 <br />
+        奇數回：攻擊(COIN)
+        <br /> I → <br />
+        ［穿刺晶體］(DICE40-80) <br />
+        <br /> P / 特殊骰 → <br />
+        ［遍布藍霧］(DICE30-100)+20，被擊中的船隻於 下回合開始 持續 3
         回合[負面效果-腐蝕]，每次－10點耐久。
         <br />
+        [負面效果-腐蝕] 僅有造成的傷害會被疊加，回合數不變。
         <br />
-        偶數回：增益(COIN)＋目標(DICE1-人數) <br />I →<br />
+        <br />
+        偶數回：增益(COIN)＋目標(DICE1-人數) <br /> I → <br />
         ［加速癒合］恢復(DICE50-100)點血量。
         <br />
-        <br /> P / 特殊骰 →<br />
+        <br /> P / 特殊骰 → <br />
         ［多重震波］所有角色進行速度擲骰，低於20者受落石攻擊，立即－50點血量，並且下回合暫停行動
         1 次。
       </p>
