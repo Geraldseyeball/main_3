@@ -92,7 +92,7 @@ function Main16_4() {
             setHintState(true);
           }}
         >
-          破碎的紙片
+          [破碎的紙片]
         </span>
         沾附在你們身上，拼湊起莫名其妙的文字。
         <br />

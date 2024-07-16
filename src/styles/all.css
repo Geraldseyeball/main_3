@@ -974,7 +974,6 @@ main {
 .hint {
   font-weight: 800;
   cursor: pointer;
-  font-style: oblique;
 }
 .hint:hover {
   text-shadow: 0 0 3px #fff;

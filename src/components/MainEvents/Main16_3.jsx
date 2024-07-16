@@ -94,7 +94,7 @@ function Main16_3() {
             setHintState(true);
           }}
         >
-          木板殘骸
+          [木板殘骸]
         </span>
         掉落在甲板上，上方有雕刻過的痕跡。
         <br />

@@ -93,7 +93,7 @@ function Main16_1() {
             setHintState(true);
           }}
         >
-          布料般的東西
+          [布料般的東西]
         </span>
         ，上面似乎寫著什麼。
         <br />

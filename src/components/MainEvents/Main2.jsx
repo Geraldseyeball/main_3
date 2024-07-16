@@ -45,7 +45,7 @@ function Main2() {
             dispatch(setImage(2));
           }}
         >
-          幽魂
+          [幽魂]
         </span>
         般載浮載沉，安靜地盪了過來。
       </p>
@@ -58,7 +58,7 @@ function Main2() {
             dispatch(setImage(3));
           }}
         >
-          海裡的東西
+          [海裡的東西]
         </span>
         死去的味道。
       </p>

@@ -88,7 +88,7 @@ function Main13_2() {
             setHint(true);
           }}
         >
-          一串東西
+          [一串東西]
         </span>
         。
         <br />

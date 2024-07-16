@@ -92,7 +92,7 @@ function Main13_3() {
             setHint(true);
           }}
         >
-          小冊子
+          [小冊子]
         </span>
         被包覆在有些黏稠的淡藍色透明液體中。
         <br />
