@@ -872,7 +872,10 @@ main {
     color: #723030;
   }
   .text-area {
-    background-image: url("/UI/sen_blood_s.png");
+    background-image: url("/UI/sen_blood.png");
+    @include pad {
+      background-image: url("/UI/sen_blood_s.png");
+    }
   }
 }
 .hidden {

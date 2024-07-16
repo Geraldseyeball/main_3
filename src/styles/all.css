@@ -1059,7 +1059,12 @@ main {
   color: #723030;
 }
 .blood-scene .text-area {
-  background-image: url("/UI/sen_blood_s.png");
+  background-image: url("/UI/sen_blood.png");
+}
+@media (max-width: 1115px) {
+  .blood-scene .text-area {
+    background-image: url("/UI/sen_blood_s.png");
+  }
 }
 
 .hidden {
