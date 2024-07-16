@@ -51,7 +51,7 @@ function Main16_2() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const style = { "font-style": "oblique", cursor: "pointer" };
+  const style = { cursor: "pointer" };
 
   function scrollToBottom() {
     ref.current.scrollIntoView("smooth");
