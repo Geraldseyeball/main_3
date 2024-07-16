@@ -56,7 +56,11 @@ function ImgArea() {
     <div className="img-area">
       <img src={currentImg[0]} alt="" className="sence" />
       <div className="btn-group">
-        <a href="#" className="btn">
+        <a
+          href="https://geraldseyeball.wixsite.com/main-story03/03-主線須知事項"
+          className="btn"
+          target="_blank"
+        >
           <img
             src={
               mainState === "normal"
