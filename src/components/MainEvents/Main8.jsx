@@ -36,12 +36,14 @@ function Main8() {
     showText(textState + 1);
   };
 
+  const style = { "animation-duration": "2.5s" };
+
   useEffect(() => {
     scrollToBottom();
   }, [textState]);
   return (
     <div className="text-box">
-      <p className="text" onAnimationEnd={updateTextState}>
+      <p className="text" style={style} onAnimationEnd={updateTextState}>
         黑暗中驟然出現的亮光是多麼誘人，你突然有點理解那些被燈籠魚吞下肚的獵物，那抹
         <span className="crystal">藍</span>靜靜地綻放，美好得讓人嚮往。
         <br />
@@ -56,6 +58,7 @@ function Main8() {
       <p className="talk-effect">「……我……」</p>
       <p
         className={textState > 0 ? "text" : "hidden"}
+        style={style}
         onAnimationEnd={updateTextState}
       >
         發光的<span className="crystal">藍</span>
@@ -74,6 +77,7 @@ function Main8() {
       <p className={textState > 0 ? "talk-effect" : "hidden"}>「錯誤……孽……」</p>
       <p
         className={textState > 1 ? "text" : "hidden"}
+        style={style}
         onAnimationEnd={updateTextState}
       >
         先是細小的<span className="crystal">碎</span>屑，接著開始出現較
@@ -88,6 +92,7 @@ function Main8() {
       </p>
       <p
         className={textState > 2 ? "text" : "hidden"}
+        style={style}
         onAnimationEnd={updateTextState}
       >
         那道從你們深入<span className="crystal">魚腹</span>就混在
@@ -102,6 +107,7 @@ function Main8() {
       </p>
       <p
         className={textState > 3 ? "text" : "hidden"}
+        style={style}
         onAnimationEnd={updateTextState}
       >
         <span className="crystal">聲音</span>從
@@ -116,6 +122,7 @@ function Main8() {
       </p>
       <p
         className={textState > 4 ? "text" : "hidden"}
+        style={style}
         onAnimationEnd={updateTextState}
       >
         那是一個人類，大概是。
@@ -138,6 +145,7 @@ function Main8() {
       </p>
       <p
         className={textState > 5 ? "text" : "hidden"}
+        style={style}
         onAnimationEnd={updateTextState}
       >
         在<span className="crystal">你</span>們足夠

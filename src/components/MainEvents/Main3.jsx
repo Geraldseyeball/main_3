@@ -20,12 +20,14 @@ const data = [
 
 function Main3({ main3BtnState }) {
   const [textState, textShow] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
   const ref = useRef();
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   function explosion() {
-    dispatch(setBloodState());
+    setIsOpen(true);
+    !isOpen && dispatch(setBloodState());
   }
   function scrollToBottom() {
     ref.current.scrollIntoView("smooth");

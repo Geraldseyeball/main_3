@@ -5,12 +5,10 @@ import { setImage, setMainState } from "../../../redux/stateSlice/stateSlice";
 import { useNavigate } from "react-router-dom";
 import { addLog } from "../../../redux/logSlice/logSlice";
 import {
-  setBronze,
   setCrystal,
   setItem,
   setPBronze,
   setPSliver,
-  setSliver,
   setUncrystal,
 } from "../../../redux/itemSlice/itemSlice";
 
@@ -57,7 +55,7 @@ function Main13_4() {
     ["-", ""],
   ];
 
-  const style = { cursor: "pointer" };
+  const style = { "font-style": "oblique", cursor: "pointer" };
 
   return (
     <div className="text-box">

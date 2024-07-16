@@ -51,6 +51,8 @@ function Main16_2() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const style = { "font-style": "oblique", cursor: "pointer" };
+
   function scrollToBottom() {
     ref.current.scrollIntoView("smooth");
   }
@@ -82,6 +84,7 @@ function Main16_2() {
           洞穴裡沒有半個人影，只有成片的花朵無風搖曳著，冰晶般剔透的花瓣散發著微弱的光芒，在血肉組成的地面上隨著歌曲的旋律輕輕擺動，你們在花田的最深處看到了那個
           <span
             className="shine"
+            style={style}
             onClick={() => {
               setItemState(true);
             }}
