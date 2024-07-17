@@ -4,9 +4,11 @@ import btnImg from "/UI/btn_sen_normal.png";
 import { useNavigate } from "react-router-dom";
 import { addLog } from "../../../redux/logSlice/logSlice";
 import {
+  setItem,
   setPGold,
   setPItem,
   setPSliver,
+  setUncrystal,
 } from "../../../redux/itemSlice/itemSlice";
 
 function Main18_2() {
@@ -33,6 +35,25 @@ function Main18_2() {
     "[索羅爾群島仲裁者] 圖紙 x1",
     "寵物 - 海貓",
     "-",
+  ];
+  const getItem = [
+    ["傑拉爾德的畫像 x1", ""],
+    [
+      "密醫手稿 x1 - ",
+      "持有後，可在使用 基礎醫療包 時額外恢復 30點血量，可與其他道具疊加、不可單獨使用。此為 非 消耗性道具，可依照說明重複使用。",
+    ],
+    [
+      "變異巨鯨油脂 x1 - ",
+      "外型乳白偏黃，香氣四溢，可以向藍晶船廠兌換［不滅明燈］。",
+    ],
+    [
+      "[索羅爾群島仲裁者] 圖紙 x1 - ",
+      "可依照圖紙自行合成，外觀自訂。（需求部件：[索羅爾群島仲裁者] 部件A、[索羅爾群島仲裁者] 部件B。） ［武器］欄位裝備後，攻擊骰 額外＋100。 下回合攻擊骰 再 額外＋10(至多疊加至＋40)。",
+    ],
+    [
+      "[寵物] 海貓 - ",
+      "傳說中能為船隻帶來幸運的生物，事實上只是個晚上很愛叫的有蹼小貓。 僅能於船隻v船隻的戰鬥結束後使喚，讓牠叼來不同戰利品供船隊挑選。 須於擲獎勵骰前宣告使用，該獎勵骰須完整擲 3遍，並從中擇一當做結果，若沒有擲骰獎勵則視作無法使用。 此寵物僅限主線可使用，且只作用於船戰獎勵。",
+    ],
   ];
   const dataLog = [...data, "-"];
   const [textState, setTextState] = useState(0);
@@ -111,8 +132,10 @@ function Main18_2() {
         onClick={() => {
           dispatch(addLog(dataLog));
           dispatch(addLog(item));
+          dispatch(setUncrystal(2500));
           dispatch(setPGold(1));
           dispatch(setPSliver(50));
+          dispatch(setItem(getItem));
           dispatch(setPItem(["珠寶飾品 x10", ""]));
           navigate("/19");
         }}
