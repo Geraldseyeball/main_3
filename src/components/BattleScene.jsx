@@ -208,6 +208,7 @@ function BattleScene({ windowState }) {
         </span>
         <br /> ※ 血量低於50（含）時，速度變更為 (DICE20)+10
         <br />
+        <br />
         【敵方戰鬥回合】分為奇數回 和 偶數回 <br />
         <hr />
         <span className="bold">[奇數回：攻擊(COIN)]</span>
