@@ -5,6 +5,11 @@ import book from "/EP3/BoatScene/3-18-book.png";
 import chair from "/EP3/BoatScene/3-18-chair.png";
 import paint from "/EP3/BoatScene/3-18-paint.png";
 import bgShake from "/EP3/BoatScene/3-19-room.gif";
+import bobei01 from "/UI/bobei_01.png";
+import bobei02 from "/UI/bobei_02.png";
+import bobei03 from "/UI/bobei_03.png";
+import bobei04 from "/UI/bobei_04.png";
+import bobei05 from "/UI/bobei_05.png";
 import { useEffect, useRef, useState } from "react";
 import Book from "./Book";
 import { useDispatch, useSelector } from "react-redux";
@@ -238,11 +243,16 @@ function BoatScene() {
               className={hintState ? "text" : "hidden"}
               onAnimationEnd={showText}
             >
-              聖筊－腎上腺素給了你無限的力量，你用無法想像的驚人技巧高速回到了船上，第一時間進入備戰模式。
+              <img src={bobei01} alt="" />
+              <img src={bobei02} alt="" />
+              <img src={bobei03} alt="" />
+              －腎上腺素給了你無限的力量，你用無法想像的驚人技巧高速回到了船上，第一時間進入備戰模式。
               <br />
-              笑筊－崎嶇的結晶山不論上下都很煩人，沒人想在這摔個屁股開花，你盡可能謹慎且快速的朝船奔去，戰鬥開始的第一回合無法行動。
+              <img src={bobei04} alt="" />
+              －崎嶇的結晶山不論上下都很煩人，沒人想在這摔個屁股開花，你盡可能謹慎且快速的朝船奔去，戰鬥開始的第一回合無法行動。
               <br />
-              無筊－唉呦喂呀！你的屁屁跟地面來了個親密接觸，儘管你以最快的速度起身，仍舊耽誤了些時間，戰鬥開始的前兩回合無法行動。
+              <img src={bobei05} alt="" />
+              －唉呦喂呀！你的屁屁跟地面來了個親密接觸，儘管你以最快的速度起身，仍舊耽誤了些時間，戰鬥開始的前兩回合無法行動。
             </p>
             <p className={hintState && textState > 8 ? "text" : "hidden"}>
               <span

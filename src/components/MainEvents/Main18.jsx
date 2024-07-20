@@ -62,7 +62,7 @@ function Main18() {
         className={textState > 2 ? "text" : "hidden"}
         onAnimationEnd={showText}
       >
-        請使用角色進行攻擊，合計傷害大於230時成功破門。
+        請使用角色進行攻擊，不限次數，合計傷害大於230時成功破門。
       </p>
       <button
         className={textState > 3 ? "btn main-btn" : "hidden"}

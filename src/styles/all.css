@@ -474,7 +474,7 @@ main {
   z-index: -2;
   width: 280px;
   height: 100%;
-  background-image: url("/public/UI/frame_左_深綠.png");
+  background-image: url("/UI/frame_左_深綠.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -487,7 +487,7 @@ main {
   transform: translateY(-50%);
   z-index: -2;
   height: 100%;
-  background-image: url("/public/UI/frame_右_深綠.png");
+  background-image: url("/UI/frame_右_深綠.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -575,13 +575,16 @@ main {
   overflow-y: scroll;
 }
 .battle .rule .hint {
-  color: #49513e;
+  color: #7d825a;
 }
 .battle .rule p {
-  color: #49513e;
+  color: #7d825a;
 }
 .battle .rule hr {
-  color: #49513e;
+  color: #7d825a;
+}
+.battle .rule span {
+  color: #7d825a;
 }
 .battle .rule::-webkit-scrollbar {
   display: none;
