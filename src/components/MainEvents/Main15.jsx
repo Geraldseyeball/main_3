@@ -97,14 +97,21 @@ function Main15() {
         你們是否持有【連缺ＯＯ因型都能懂的Ｏ學入門Ｏ南】？
         <br />
         <span
-          className="hint"
+          className={hint2State ? "hidden" : "hint"}
           onClick={() => {
             setHintState(true);
           }}
         >
           ［是］
         </span>
-        <span className="hint">［否］</span>
+        <span
+          className={hintState ? "hidden" : "hint"}
+          onClick={() => {
+            setHint2State(true);
+          }}
+        >
+          ［否］
+        </span>
       </p>
       <p className={hint2State ? "text" : "hidden"}>噢，那真是太可惜了。</p>
       <p className={hintState ? "text" : "hidden"} onAnimationEnd={showText}>

@@ -65,7 +65,7 @@ function Main11() {
         你們是否持有【連缺ＯＯ因型都能懂的Ｏ學入門Ｏ南】？
         <br />
         <span
-          className="hint"
+          className={hint2State ? "hidden" : "hint"}
           onClick={() => {
             showHint(true);
           }}
@@ -73,7 +73,7 @@ function Main11() {
           ［是］
         </span>
         <span
-          className="hint"
+          className={hintState ? "hidden" : "hint"}
           onClick={() => {
             showHint2(true);
           }}
