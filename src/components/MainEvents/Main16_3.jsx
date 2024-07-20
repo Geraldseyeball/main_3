@@ -70,7 +70,7 @@ function Main16_3() {
         航行的速度逐漸慢下來，通道似乎變得更加狹窄了，肉壁正緊貼著船側，感謝那些濕滑體液的幫助，你們勉強還在前進，但愈發艱辛。
       </p>
       <p className={textState > 0 ? "text" : "hidden"}>
-        請擲一個
+        請隊伍推派 1 人，擲一個
         <span
           className="hint-white"
           onClick={() => {

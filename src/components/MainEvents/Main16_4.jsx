@@ -69,7 +69,7 @@ function Main16_4() {
         你們決定前往最左側的通道，熟悉的黑暗壟罩著你們，光線比上次更加式微，你感覺到肌膚沾黏上細線般的東西，試圖拭去時卻只抓住一團空氣。移動只會增加被纏上的可能，它們無處不在。
       </p>
       <p className={textState > 0 ? "text" : "hidden"}>
-        請擲一個
+        請隊伍推派 1 人，擲一個
         <span
           className="hint-white"
           onClick={() => {

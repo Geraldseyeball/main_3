@@ -195,7 +195,7 @@ function Main16_2() {
         className={textState > 4 ? "text" : "hidden"}
         onAnimationEnd={showText}
       >
-        若要靠近，請擲一個
+        若要靠近，請隊伍推派 1 人，擲一個
         <span
           className="hint-white"
           onClick={() => {

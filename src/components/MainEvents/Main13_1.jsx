@@ -62,7 +62,7 @@ function Main13_1() {
         你們決定前往最左側的通道，船隻堪堪擦過稍嫌狹窄的入口，純粹的黑暗隨著深入纏上了你們，你注意到船上的照明設備在這似乎難以起到作用，如同被抑制般僅能照亮不到一米的距離。
       </p>
       <p className={textState > 0 ? "text" : "hidden"}>
-        請擲一個
+        請隊伍推派 1 人，擲一個
         <span
           className="hint-white"
           onClick={() => {
