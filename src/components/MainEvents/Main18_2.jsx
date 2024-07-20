@@ -20,6 +20,11 @@ function Main18_2() {
     "你們在滿地紅藍交錯的狼藉中尋找可能有用的東西，聲聲泣血似的悲鳴在空間中迴盪，一隻毛茸茸的小生物從角落竄出。",
   ];
   const item = [
+    "[獲得獎勵]",
+    "每艘船獲得 -",
+    "未打磨的藍晶 x1000 + 50銀 + (COIN)x1",
+    "P - 隱士之杖 x1",
+    "I - 隱士絞繩 x1",
     "[最後的寶庫 - 金山銀山]",
     "每位船員獲得 -",
     "1金50銀",
@@ -57,11 +62,16 @@ function Main18_2() {
   ];
   const dataLog = [...data, "-"];
   const [textState, setTextState] = useState(0);
+  const [hintState, setHintState] = useState(false);
+  const [coinState, setCoinState] = useState("");
   const [itemState, setItemState] = useState({ item1: false, item2: false });
   const battleState = useSelector((state) => state.state.battle);
   const ref = useRef();
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const focus = { fontWeight: "900", cursor: "pointer" };
+  const unFocus = { fontWeight: "900", opacity: "0.5", cursor: "pointer" };
 
   function scrollToBottom() {
     ref.current.scrollIntoView("smooth");
@@ -73,7 +83,7 @@ function Main18_2() {
 
   useEffect(() => {
     scrollToBottom();
-  }, [textState, itemState]);
+  }, [textState, itemState, hintState]);
 
   return (
     <div className="text-box">
@@ -86,6 +96,41 @@ function Main18_2() {
           {el}
         </p>
       ))}
+      <p className={!battleState && textState > 4 ? "text" : "hidden"}>
+        <span
+          className="hint"
+          onClick={() => {
+            setHintState(true);
+          }}
+        >
+          [獲得獎勵]
+        </span>
+      </p>
+      <p className={hintState ? "text" : "hidden"}>
+        每艘船獲得 - 未打磨的藍晶 x1000 + 50銀 + (COIN)x1
+        <br />
+        P - 隱士之杖 x1
+        <br />I - 隱士絞繩 x1
+      </p>
+      <p className={hintState ? "text" : "hidden"}>
+        [擲骰結果] -{" "}
+        <span
+          style={coinState === "P" ? focus : unFocus}
+          onClick={() => {
+            setCoinState("P");
+          }}
+        >
+          [P]
+        </span>{" "}
+        <span
+          style={coinState === "I" ? focus : unFocus}
+          onClick={() => {
+            setCoinState("I");
+          }}
+        >
+          [I]
+        </span>
+      </p>
       <p
         className={!battleState && textState > 4 ? "text" : "hidden"}
         onClick={() => {
@@ -135,6 +180,24 @@ function Main18_2() {
           dispatch(setUncrystal(2500));
           dispatch(setPGold(1));
           dispatch(setPSliver(50));
+          coinState &&
+            dispatch(
+              setItem(
+                coinState === "P"
+                  ? [
+                      [
+                        "隱士之杖 x1 - ",
+                        "［武器］欄位裝備後，攻擊骰 額外＋80。治療時 額外消除指定對象 1項負面效果。",
+                      ],
+                    ]
+                  : [
+                      [
+                        "隱士絞繩 x1 - ",
+                        "［武器］欄位裝備後，攻擊骰 額外＋90。",
+                      ],
+                    ]
+              )
+            );
           dispatch(setItem(getItem));
           dispatch(setPItem(["珠寶飾品 x10", ""]));
           navigate("/19");

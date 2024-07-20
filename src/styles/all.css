@@ -1097,6 +1097,17 @@ main {
   font-weight: 900;
 }
 
+.input-area {
+  width: 20px;
+  border: 0;
+  border-bottom: 2px solid #2f2d22;
+  background-color: transparent;
+  font-family: "Cubic11", sans-serif;
+  font-size: 16px;
+  text-align: center;
+  outline: none;
+}
+
 @keyframes appear {
   0% {
     opacity: 0;

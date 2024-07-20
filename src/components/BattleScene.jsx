@@ -128,7 +128,7 @@ function BattleScene({ windowState }) {
         次可將目標擊退。
         <br />
         <br />
-        【敵方戰鬥回合】攻擊(COIN)
+        【敵方戰鬥回合】行動(COIN)
         <br />I →<br />
         ［真是蟹了］(DICE25-50)
         <br />
@@ -146,7 +146,7 @@ function BattleScene({ windowState }) {
         <br />※ 因強烈的憤恨，第一次血量歸零時將會留有 1 點血量。
         <br />
         <br />
-        【敵方戰鬥回合】攻擊(COIN)
+        【敵方戰鬥回合】行動(COIN)
         <br />I →<br />
         ［真是蟹了］(DICE40-50) <br />
         <br />P / 特殊骰 →<br />
@@ -162,7 +162,7 @@ function BattleScene({ windowState }) {
         次可將目標擊退。
         <br />
         <br />
-        【敵方戰鬥回合】攻擊(COIN)
+        【敵方戰鬥回合】行動(COIN)
         <br /> I → <br />
         ［蝦次一定］(DICE10-40)
         <br />
@@ -180,7 +180,7 @@ function BattleScene({ windowState }) {
         <br />※ 因強烈的憤恨，第一次血量歸零時將會留有 1 點血量。
         <br />
         <br />
-        【敵方戰鬥回合】攻擊(COIN)
+        【敵方戰鬥回合】行動(COIN)
         <br /> I → <br />
         ［蝦次一定］(DICE10-40)
         <br />
@@ -199,7 +199,7 @@ function BattleScene({ windowState }) {
         <br /> ※ 血量低於50（含）時，速度變更為 (DICE20)+10
         <br />
         【敵方戰鬥回合】 <br />
-        奇數回：攻擊(COIN)
+        奇數回：行動(COIN)
         <br /> I → <br />
         ［穿刺晶體］(DICE40-80) <br />
         <br /> P / 特殊骰 → <br />
@@ -277,72 +277,42 @@ function BattleScene({ windowState }) {
       uncrystal: 400,
       crystal: 0,
       bronze: 0,
-      sliver: 10,
+      sliver: 0,
       gold: 0,
-      item: [
-        ["堅硬蟹螯 x4", ""],
-        ["石化鯨礦 x5", ""],
-        [
-          "鋸緣指虎 x2 -",
-          "［武器］欄位裝備後，攻擊骰 額外＋80。下回合攻擊骰 再 額外＋20(至多疊加至＋40)。",
-        ],
-        ["-", ""],
-      ],
+      item: [],
     },
     crabAngry: {
       uncrystal: 650,
       crystal: 0,
       bronze: 0,
-      sliver: 10,
+      sliver: 0,
       gold: 0,
       item: [
-        ["堅硬蟹螯 x4", ""],
-        ["石化鯨礦 x5"],
-        [
-          "鋸緣指虎 x2 -",
-          "［武器］欄位裝備後，攻擊骰 額外＋80。下回合攻擊骰 再 額外＋20(至多疊加至＋40)。",
-        ],
         [
           "閃爍藍光的堅硬甲殼 x4 - ",
           "可用於 官方鍛造噗，消耗 1 個可鍛造裝備 1 次。",
         ],
-        ["-", ""],
       ],
     },
     shrimp: {
       uncrystal: 400,
       crystal: 0,
       bronze: 0,
-      sliver: 10,
+      sliver: 0,
       gold: 0,
-      item: [
-        ["結晶化的眼球 x8", ""],
-        ["石化鯨礦 x5", ""],
-        [
-          "刺脊長棍 x2 - ",
-          "［武器］欄位裝備後，攻擊骰 額外＋70。下回合攻擊骰 再 額外＋30(至多疊加至＋60)。",
-        ],
-        ["-", ""],
-      ],
+      item: [],
     },
     shrimpAngry: {
       uncrystal: 650,
       crystal: 0,
       bronze: 0,
-      sliver: 10,
+      sliver: 0,
       gold: 0,
       item: [
-        ["結晶化的眼球 x8", ""],
-        ["石化鯨礦 x5", ""],
-        [
-          "刺脊長棍 x2 - ",
-          "［武器］欄位裝備後，攻擊骰 額外＋70。下回合攻擊骰 再 額外＋30(至多疊加至＋60)。",
-        ],
         [
           "閃爍藍光的堅硬甲殼 x4 - ",
           "可用於 官方鍛造噗，消耗 1 個可鍛造裝備 1 次。",
         ],
-        ["-", ""],
       ],
     },
     nameless: {
@@ -351,14 +321,7 @@ function BattleScene({ windowState }) {
       bronze: 0,
       sliver: 50,
       gold: 0,
-      item: [
-        [
-          "隱士之杖 x1",
-          "［武器］欄位裝備後，攻擊骰 額外＋80。 治療時 額外消除指定對象 1項負面效果。",
-        ],
-        ["隱士絞繩 x1", "［武器］欄位裝備後，攻擊骰 額外＋90。"],
-        ["-", ""],
-      ],
+      item: [],
     },
   };
 
