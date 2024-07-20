@@ -175,6 +175,7 @@ function BoatScene() {
                 className="hint"
                 onClick={() => {
                   setState(false);
+                  showBook(false);
                 }}
               >
                 [沒什麼好看的了?]
