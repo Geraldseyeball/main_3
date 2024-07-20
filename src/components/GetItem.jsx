@@ -44,7 +44,7 @@ function GetItem({ itemState, showItem }) {
         {uncrystal > 0 && <li>未打磨的藍晶 x{uncrystal}</li>}
         <li>
           {gold != 0 || sliver != 0 || bronze != 0
-            ? `錢財 - ${gold > 0 ? `${gold}金 ` : ""}
+            ? `帝菈幣 - ${gold > 0 ? `${gold}金 ` : ""}
           ${sliver > 0 ? `${sliver}銀 ` : ""}
           ${bronze > 0 ? `${bronze}銅` : ""}`
             : ""}
