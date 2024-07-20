@@ -31,7 +31,7 @@ function GetItem({ itemState, showItem }) {
         <li style={bold}>[個人獎勵]</li>
         <li>
           {pGold != 0 || pSliver != 0
-            ? `錢財 - ${pGold > 0 ? `${pGold}金` : ""} ${
+            ? `帝菈幣 - ${pGold > 0 ? `${pGold}金` : ""} ${
                 pSliver > 0 ? `${pSliver}銀` : ""
               } ${pBronze > 0 ? `${pBronze}銅` : ""}`
             : ""}

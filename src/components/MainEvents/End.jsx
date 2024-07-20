@@ -28,7 +28,7 @@ function End() {
             <br />
           </>
         )}
-        財產 - {pGold > 0 && `${pGold}金`}
+        帝菈幣 - {pGold > 0 && `${pGold}金`}
         {pSliver > 0 && `${pSliver}銀`}
         <br />
         {pItem && pItem[0]}
@@ -48,7 +48,7 @@ function End() {
             <br />
           </>
         )}
-        財產 - {gold > 0 && `${gold}金`}
+        帝菈幣 - {gold > 0 && `${gold}金`}
         {sliver > 0 && `${sliver}銀`}
         {bronze > 0 && `${bronze}銅`}
         <br />
