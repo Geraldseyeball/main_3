@@ -36,7 +36,7 @@ function Main8() {
     showText(textState + 1);
   };
 
-  const style = { "animation-duration": "2.5s" };
+  const style = { animationDuration: "2.5s" };
 
   useEffect(() => {
     scrollToBottom();

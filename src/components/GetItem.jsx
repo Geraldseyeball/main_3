@@ -15,7 +15,7 @@ function GetItem({ itemState, showItem }) {
 
   const style = { color: "#babe7c", opacity: "0.5" };
 
-  const bold = { "font-weight": "700" };
+  const bold = { fontWeight: "700" };
 
   return (
     <div className={itemState ? "item" : "hidden"}>

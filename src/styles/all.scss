@@ -128,7 +128,7 @@ main {
 .main-btn {
   display: flex;
   position: absolute;
-  bottom: 10px;
+  bottom: 13px;
   right: 20px;
   animation: appear 1s ease-in;
   img {
@@ -160,6 +160,7 @@ main {
   display: flex;
   justify-content: end;
   gap: 4px;
+  margin-bottom: 4px;
   animation: appear 1s ease-in;
 }
 .log {
