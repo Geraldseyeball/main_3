@@ -23,19 +23,30 @@ const data = [
   "每位船員獲得 -",
   "18銀50銅",
   "每艘船獲得 -",
-  "未打磨的藍晶 x400",
-  "多功能維修套組 x3",
-  "機械零件 x5",
-  "[索羅爾群島仲裁者] 部件A x2",
+  "未打磨的藍晶 x400 + (BZ)x4",
+  "紅bz - 多功能維修套組 x3",
+  "藍bz - 機械零件 x5",
+  "綠bz - 藍晶 x150",
+  "黑bz - [索羅爾群島仲裁者] 部件A x2",
   "-",
 ];
 
 function Main13_4() {
   const [textState, setTextState] = useState(0);
   const [hintState, setHintState] = useState(false);
+  const [items, setItems] = useState([]);
+  const [getItem, setGetItem] = useState({
+    red: 0,
+    blue: 0,
+    green: 0,
+    black: 0,
+  });
   const ref = useRef();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const input = { color: "#fff", borderBottomColor: "#fff" };
+  const white = { color: "#fff", opacity: "0.6" };
 
   function scrollToBottom() {
     ref.current.scrollIntoView("smooth");
@@ -45,17 +56,23 @@ function Main13_4() {
     scrollToBottom();
   }, [textState, hintState]);
 
-  const item = [
-    [
-      "多功能維修套組 x3 - ",
-      "可使用總次數：1。 1回合 能使用1次，並在該回合立即恢復 船隻耐久＋150。 此為消耗性使用道具，總次數用盡後須再次購買才可使用。",
-    ],
-    ["機械零件 x5", ""],
-    ["[索羅爾群島仲裁者] 部件A x2 - ", "需要製作圖紙。"],
-    ["-", ""],
-  ];
-
   const style = { cursor: "pointer" };
+
+  useEffect(() => {
+    const totalItem = [];
+    getItem.red > 0 &&
+      totalItem.push([
+        `多功能維修套組 x${getItem.red * 3} - `,
+        "可使用總次數：1。 1回合 能使用1次，並在該回合立即恢復 船隻耐久＋150。 此為消耗性使用道具，總次數用盡後須再次購買才可使用。",
+      ]);
+    getItem.blue > 0 && totalItem.push([`機械零件 x${getItem.blue * 5}`, ""]);
+    getItem.black > 0 &&
+      totalItem.push([
+        `[索羅爾群島仲裁者] 部件A x${getItem.black * 2} - `,
+        "需要製作圖紙。",
+      ]);
+    setItems(totalItem);
+  }, [getItem]);
 
   return (
     <div className="text-box">
@@ -116,15 +133,65 @@ function Main13_4() {
         18銀50銅
         <br />
         每艘船獲得 -<br />
-        未打磨的藍晶 x400
+        未打磨的藍晶 x400 + (BZ)x4
         <br />
-        藍晶 x150
+        紅bz - 多功能維修套組 x3
         <br />
-        多功能維修套組 x3
+        藍bz - 機械零件 x5
         <br />
-        機械零件 x5
+        綠bz - 藍晶 x150
         <br />
-        [索羅爾群島仲裁者] 部件A x2
+        黑bz - [索羅爾群島仲裁者] 部件A x2
+      </p>
+      <p className={hintState ? "text" : "hidden"}>
+        [擲骰結果] -{" "}
+        <input
+          className="input-area"
+          style={input}
+          value={getItem.red}
+          onChange={(e) => {
+            setGetItem((prev) => {
+              return { ...prev, red: e.target.value };
+            });
+          }}
+        />{" "}
+        紅
+        <input
+          className="input-area"
+          style={input}
+          value={getItem.blue}
+          onChange={(e) => {
+            setGetItem((prev) => {
+              return { ...prev, blue: e.target.value };
+            });
+          }}
+        />{" "}
+        藍
+        <input
+          className="input-area"
+          style={input}
+          value={getItem.green}
+          onChange={(e) => {
+            setGetItem((prev) => {
+              return { ...prev, green: e.target.value };
+            });
+          }}
+        />{" "}
+        綠
+        <input
+          className="input-area"
+          style={input}
+          value={getItem.black}
+          onChange={(e) => {
+            setGetItem((prev) => {
+              return { ...prev, black: e.target.value };
+            });
+          }}
+        />{" "}
+        黑<br />
+        <span style={white}>
+          ※可在底線處輸入擲骰結果，若未填寫則不會被計入自動統計的獎勵中。輸入完數字後直接繼續前進即可。
+        </span>
       </p>
       <button
         className={textState > 4 ? "btn main-btn" : "hidden"}
@@ -133,10 +200,10 @@ function Main13_4() {
           dispatch(setMainState("normal"));
           dispatch(addLog(data));
           dispatch(setUncrystal(400));
-          dispatch(setCrystal(150));
+          getItem.green > 0 && dispatch(setCrystal(getItem.green * 150));
           dispatch(setPSliver(18));
           dispatch(setPBronze(50));
-          dispatch(setItem(item));
+          dispatch(setItem(items));
           navigate("/14");
         }}
       >

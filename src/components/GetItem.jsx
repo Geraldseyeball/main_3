@@ -8,9 +8,9 @@ function GetItem({ itemState, showItem }) {
   const gold = useSelector((state) => state.item.gold);
   const sliver = useSelector((state) => state.item.sliver);
   const bronze = useSelector((state) => state.item.bronze);
-  const pCrystal = useSelector((state) => state.item.pCrystal);
   const pGold = useSelector((state) => state.item.pGold);
   const pSliver = useSelector((state) => state.item.pSliver);
+  const pBronze = useSelector((state) => state.item.pBronze);
   const pItem = useSelector((state) => state.item.pItem);
 
   const style = { color: "#babe7c", opacity: "0.5" };
@@ -29,12 +29,11 @@ function GetItem({ itemState, showItem }) {
       </button>
       <ul>
         <li style={bold}>[個人獎勵]</li>
-        {pCrystal > 0 && <li>未打磨的藍晶 x{pCrystal}</li>}
         <li>
           {pGold != 0 || pSliver != 0
             ? `錢財 - ${pGold > 0 ? `${pGold}金` : ""} ${
                 pSliver > 0 ? `${pSliver}銀` : ""
-              }`
+              } ${pBronze > 0 ? `${pBronze}銅` : ""}`
             : ""}
         </li>
         {pItem.map((el, i) => (

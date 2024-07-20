@@ -988,7 +988,6 @@ main {
   font-weight: 800;
   cursor: pointer;
   color: #fff;
-  text-decoration: underline;
 }
 .hint-white:hover {
   text-shadow: 0 0 3px #fff;

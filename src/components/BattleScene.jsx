@@ -33,6 +33,7 @@ function BattleScene({ windowState }) {
   const [battleEnd, showAfterBattle] = useState(false);
 
   const style = { color: "#fff" };
+  const btn = { color: "#7d825a" };
 
   const dispatch = useDispatch();
 
@@ -377,7 +378,7 @@ function BattleScene({ windowState }) {
             dispatch(setBronze(item[monster].bronze));
           }}
         >
-          <p>{btn1}</p>
+          <p style={btn}>{btn1}</p>
         </button>
         <button
           className="btn down"
@@ -386,7 +387,7 @@ function BattleScene({ windowState }) {
             showAfterBattle(true);
           }}
         >
-          <p>{btn2}</p>
+          <p style={btn}>{btn2}</p>
         </button>
       </div>
       <div className={battleEnd ? "lose" : "hidden"}>
