@@ -134,7 +134,7 @@ function Main8Talk() {
         }}
       >
         <img src={btnImg} alt="" />
-        <p>沒什麼好說的了</p>
+        <p>結束對話</p>
       </button>
       <div ref={ref}></div>
     </div>
