@@ -407,6 +407,7 @@ main {
   width: 100vw;
   height: 100vh;
   background-image: url("/EP3/explosion.gif");
+  background-color: #fff;
   background-size: cover;
 }
 .blood p {

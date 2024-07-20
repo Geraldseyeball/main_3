@@ -49,7 +49,7 @@ function Main5r() {
         className={textState > 1 ? "text" : "hidden"}
         onAnimationEnd={showNextText}
       >
-        請擲一個
+        請隊伍推派 1 人，擲一個
         <span
           className="hint"
           onClick={() => {
