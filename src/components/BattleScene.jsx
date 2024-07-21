@@ -41,7 +41,7 @@ function BattleScene({ windowState }) {
     crab: "變異的鋸緣鏽斑蟹 x2",
     crabAngry: "怨懟的 變異的鋸緣鏽斑蟹 x2",
     shrimp: "變異的刺脊岩龍蝦 x4",
-    shrimpAngry: "怨懟的 變異的刺脊岩龍蝦 x3",
+    shrimpAngry: "怨懟的 變異的刺脊岩龍蝦 x4",
     nameless: "被吞噬的無名者",
   };
   const monsterType = {
