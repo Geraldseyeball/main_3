@@ -71,7 +71,7 @@ function Main13_3() {
         <span
           className="hint-white"
           onClick={() => {
-            setTextState(2);
+            setTextState((prev) => prev + 1);
           }}
         >
           （COIN）

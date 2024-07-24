@@ -11,6 +11,7 @@ function End() {
   const pCrystal = useSelector((state) => state.item.pCrystal);
   const pGold = useSelector((state) => state.item.pGold);
   const pSliver = useSelector((state) => state.item.pSliver);
+  const pBronze = useSelector((state) => state.item.pBronze);
   const pItem = useSelector((state) => state.item.pItem);
 
   const style = { opacity: 0.5 };
@@ -30,6 +31,7 @@ function End() {
         )}
         帝菈幣 - {pGold > 0 && `${pGold}金`}
         {pSliver > 0 && `${pSliver}銀`}
+        {pBronze > 0 && `${pBronze}銅`}
         <br />
         {pItem && pItem[0]}
         <br />
