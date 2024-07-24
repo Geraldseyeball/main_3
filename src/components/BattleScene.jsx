@@ -220,7 +220,7 @@ function BattleScene({ windowState }) {
         <br />
         [負面效果-腐蝕] 僅有造成的傷害會被疊加，回合數不變。
         <hr />
-        <span className="bold">[偶數回：增益(COIN)＋(DICE1-人數)]</span>
+        <span className="bold">[偶數回：行動(COIN)]</span>
         <br /> I → <br />
         ［加速癒合］恢復(DICE50-100)點血量。
         <br /> P / 特殊骰 → <br />
