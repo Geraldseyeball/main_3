@@ -129,7 +129,7 @@ function BattleScene({ windowState }) {
         次可將目標擊退。
         <br />
         <br />
-        【敵方戰鬥回合】行動(COIN)
+        【敵方戰鬥回合】行動(COIN)＋命中(BOBEI)
         <br />I →<br />
         ［真是蟹了］(DICE25-50)
         <br />
@@ -150,7 +150,7 @@ function BattleScene({ windowState }) {
         </span>
         <br />
         <br />
-        【敵方戰鬥回合】行動(COIN)
+        【敵方戰鬥回合】行動(COIN)＋命中(BOBEI)
         <br />I →<br />
         ［真是蟹了］(DICE40-50) <br />
         <br />P / 特殊骰 →<br />
@@ -166,7 +166,7 @@ function BattleScene({ windowState }) {
         次可將目標擊退。
         <br />
         <br />
-        【敵方戰鬥回合】行動(COIN)
+        【敵方戰鬥回合】行動(COIN)＋命中(BOBEI)
         <br /> I → <br />
         ［蝦次一定］(DICE10-40)
         <br />
@@ -187,7 +187,7 @@ function BattleScene({ windowState }) {
         </span>
         <br />
         <br />
-        【敵方戰鬥回合】行動(COIN)
+        【敵方戰鬥回合】行動(COIN)＋命中(BOBEI)
         <br /> I → <br />
         ［蝦次一定］(DICE10-40)
         <br />
@@ -211,7 +211,7 @@ function BattleScene({ windowState }) {
         <br />
         【敵方戰鬥回合】分為奇數回 和 偶數回 <br />
         <hr />
-        <span className="bold">[奇數回：攻擊(COIN)]</span>
+        <span className="bold">[奇數回：攻擊(COIN)＋命中(BOBEI)]</span>
         <br /> I → <br />
         ［穿刺晶體］(DICE40-80) <br />
         P / 特殊骰 → <br />
@@ -220,7 +220,7 @@ function BattleScene({ windowState }) {
         <br />
         [負面效果-腐蝕] 僅有造成的傷害會被疊加，回合數不變。
         <hr />
-        <span className="bold">[偶數回：行動(COIN)]</span>
+        <span className="bold">[偶數回：行動(COIN)＋命中(BOBEI)]</span>
         <br /> I → <br />
         ［加速癒合］恢復(DICE50-100)點血量。
         <br /> P / 特殊骰 → <br />
