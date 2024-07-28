@@ -11,8 +11,8 @@ import loseBtn from "/BattleScene/btn.png";
 //monster img
 import MonsterCrab from "/EP3/MONSTERS/3-11-1m.gif";
 import MonsterCrabAngry from "/EP3/MONSTERS/3-11-2m.gif";
-import MonsterShrimp from "/EP3/MONSTERS/3-13-2m.gif";
-import MonsterShrimpAngry from "/EP3/MONSTERS/3-13-1m.gif";
+import MonsterShrimp from "/EP3/MONSTERS/3-13-1m.gif";
+import MonsterShrimpAngry from "/EP3/MONSTERS/3-13-2m.gif";
 import MonsterNameless from "/EP3/MONSTERS/3-14.gif";
 import { useDispatch, useSelector } from "react-redux";
 import { setBattleState } from "../../redux/stateSlice/stateSlice";
